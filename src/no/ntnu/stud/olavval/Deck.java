@@ -70,7 +70,7 @@ public class Deck {
         // while(intSet.size() < draw){intSet.add(rand.nextInt)}, or something similar.
 
         while(intSet.size() < draw){
-            intSet.add(rand.nextInt(53));
+            intSet.add(rand.nextInt(52));
         }
 
         intSet.forEach(i -> cardSet.add( (Card) ( this.deck.values().toArray() )[i] ) );
