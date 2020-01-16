@@ -29,12 +29,6 @@ public class DeckApp {
         hand = deck.assign(10);
 
         // prints all cards in hand
-
-        hand.stream()
-                .map(Card::getDetails)
-                .sorted() //TODO fix sorting by numeric value. x1 x11 x12 x10 x2 etc..
-                .forEachOrdered(System.out::print); //TODO format output with whitespace
-
         System.out.println(String.format("Printing all %s cards in hand:", hand.size()));
         hand.stream()
                 .map(Card::getDetails)
@@ -42,8 +36,11 @@ public class DeckApp {
                 .forEachOrdered(
                         det -> Stream.concat(Stream.of(det), Stream.of(", "))
                                 .forEachOrdered(System.out::print));
+        //TODO refactor formatted print to own method
         System.out.println("");
+
         //1d) filter and print specific suit from hand
+        //TODO refactor to separate method and make calls for each suit
 
         System.out.println("Printing Clubs suit cards: ");
         hand.stream().filter(Card -> (Card.getSuit() == 'C'))
