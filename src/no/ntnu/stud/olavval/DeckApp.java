@@ -55,8 +55,10 @@ public class DeckApp {
 
 
         // 1e) filters heart cards from hand into new set
-        HashSet<Card> cardsOfHeart = hand.stream().filter(Card -> (Card.getSuit() == 'H'))
-                .collect(Collectors.toCollection(HashSet::new));
+        HashSet<Card> cardsOfHeart = hand.stream()
+                .filter(Card -> ( Card.getSuit() == 'H') )
+                .collect(Collectors
+                        .toCollection(HashSet::new));
 
         //print heart cards
         System.out.print( String.format( "Printing all %s heart cards: ", cardsOfHeart.size() ) );
